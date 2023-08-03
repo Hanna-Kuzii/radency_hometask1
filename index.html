@@ -23,13 +23,13 @@
       <table class="table active__table">
         <thead>
           <tr class="table__title">
-            <th scope="col"></th>
-            <th scope="col">Name</th>
-            <th scope="col">Created</th>
-            <th scope="col">Category</th>
-            <th scope="col">Content</th>
-            <th scope="col">Dates</th>
-            <th scope="col">
+            <th scope="col" class="table__title_block"></th>
+            <th scope="col" class="table__title_block">Name</th>
+            <th scope="col" class="table__title_block">Created</th>
+            <th scope="col" class="table__title_block">Category</th>
+            <th scope="col" class="table__title_block">Content</th>
+            <th scope="col" class="table__title_block">Dates</th>
+            <th scope="col" class="table__title_block">
               <img src="https://img.icons8.com/material-outlined/24/downloads.png" alt="archive">
               <img src="https://img.icons8.com/material-outlined/24/trash--v1.png" alt="delete">
             </th>
@@ -41,7 +41,7 @@
       </table>
     </div>
     <div class="main__button ">
-      <button class="main__create-button create-button">
+      <button class="main__create-button create-button button">
         Create note
       </button>
     </div>
@@ -55,7 +55,7 @@
           <div class="form-group">
             <label for="exampleFormControlSelect1">Choose category</label>
             <select class="form-control new-note__category">
-              <option selected disabled>-Category-</option>
+              <option value="choosed" selected disabled>-Category-</option>
               <option id="task" value="Task">Task</option>
               <option id="idea" value="Idea">Idea</option>
               <option id="thought" value="Random Thought">Random Thought</option>
@@ -73,7 +73,7 @@
     <div class="main__statistic statistic">
       <table class="table statistic__table">
         <thead>
-          <tr class="table__title">
+          <tr class="table__title statistic__title">
             <th scope="col"></th>
             <th scope="col">Note Category</th>
             <th scope="col">Active</th>
@@ -82,6 +82,34 @@
         </thead>
         <tbody class="table__body statistic__body">
 
+        </tbody>
+      </table>
+    </div>
+    <div class="main__archive archive">
+      <div class="archive__buttons">
+        <button class="archive__show button">
+          Show archived notes
+        </button>
+        <button class="archive__hide button">
+          Hide archived notes
+        </button>
+      </div>
+      <table class="table archive__table">
+        <thead>
+          <tr class="table__title archive__title">
+            <th scope="col" class="table__title_block"></th>
+            <th scope="col" class="table__title_block">Name</th>
+            <th scope="col" class="table__title_block">Created</th>
+            <th scope="col" class="table__title_block">Category</th>
+            <th scope="col" class="table__title_block">Content</th>
+            <th scope="col" class="table__title_block">Dates</th>
+            <th scope="col" class="table__title_block">
+              <img src="https://img.icons8.com/material-outlined/24/downloads.png" alt="archive">
+            </th>
+
+          </tr>
+        </thead>
+        <tbody class="table__body archive__body">
         </tbody>
       </table>
     </div>

@@ -1,19 +1,16 @@
 import { notes, statistic  } from "../../index.js";
-import { addRowActiveTable, updateDomNotes, updateTableWithData } from "./notes.js";
+import { updateTableWithData } from "./notes.js";
 
 const buttonNewNote = document.querySelector(".create-button");
 
 const newNoteContainer = document.querySelector(".new-note");
 const buttonAddNewNote = document.querySelector(".button-add");
-const buttonSaveEditNote = document.querySelector(".button-edit");
-
 
 const form = document.querySelector(".new-note__form");
 
 buttonNewNote.addEventListener("click", function () {
   newNoteContainer.style.display = "flex";
   buttonAddNewNote.style.display = "block";
-  // buttonSaveEditNote.style.display = "none";
 });
 
 export function createNote(event) {
@@ -37,7 +34,7 @@ export function createNote(event) {
 
   const dateRegex = /\d{1,2}\/\d{1,2}\/\d{4}/g;
   const dates = content.match(dateRegex);
-  
+
   const id = Date.now();
   const date = new Date();
   const months = [
@@ -57,7 +54,7 @@ export function createNote(event) {
   const created = `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 
   document.querySelector(".new-note__name").value = '';
-  // document.querySelector("#exampleFormControlSelect1").value = '';
+  document.querySelector(".new-note__category").value = "choosed" ;
   document.querySelector(".new-note__text").value = '';
 
   const newNote = {
@@ -66,20 +63,16 @@ export function createNote(event) {
     created,
     category,
     content,
-    dates,
+    dates: dates || '',
   };
 
-  console.log(newNote);
   notes.push({id: newNote});
-  console.log(notes);
 
   event.preventDefault();
   newNoteContainer.style.display = "none";
   buttonAddNewNote.style.display = "none";
-  // buttonSaveEditNote.style.display = "none";
   
   updateTableWithData(notes, statistic);
-  // updateDomNotes();
 }
 
 

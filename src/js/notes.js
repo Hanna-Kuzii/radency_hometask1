@@ -1,7 +1,9 @@
-import { notes, archiveNotes, buttonSaveEditNote } from "../../index.js";
+import { archiveNotes, buttonSaveEditNote } from "../../index.js";
 import { archiveNote } from "./archiveNote.js";
+import { addRowArchiveTable, tableBodyArchive, updateArchivedNotes } from "./archivedNotes.js";
 import { deleteItemFromNotes } from "./deleteNotes.js";
 import { editNote, getFormFromItem } from "./editNote.js";
+
 
 const tableBodyActive = document.querySelector(".active__body");
 
@@ -38,8 +40,8 @@ export function addRowActiveTable(item) {
   tableBodyActive.appendChild(row);
 }
 
-export function updateDomNotes() {
-  const rows = document.querySelectorAll(".table__row");
+export function updateActiveNotes() {
+  const rows = document.querySelectorAll(".active__row");
 
   for (const row of rows) {
     let itemId = row.id;
@@ -51,7 +53,6 @@ export function updateDomNotes() {
     buttonSaveEditNote.addEventListener("click", editNote);
 
     editButton.addEventListener("click", () => {
-      console.log("click");
       getFormFromItem(itemId);
     });
 
@@ -86,24 +87,23 @@ export function addRowStatisticTable(item) {
 export function updateTableWithData(notes, statistic) {
   function clearTable() {
     tableBodyActive.innerHTML = "";
-    tableBodyStatistic.innerHTML ="";
+    tableBodyStatistic.innerHTML = "";
+    tableBodyArchive.innerHTML = "";
   }
   clearTable();
 
   notes.forEach((item) => {
     addRowActiveTable(item);
-    console.log(item)
   });
-
-  // statistic.forEach((item) => {});
+  archiveNotes.forEach(item => {
+    addRowArchiveTable(item);
+  })
 
   statistic.forEach((item) => {
     item.active = 0;
     item.archived = 0;
 
-    // console.log(item)
     notes.forEach((note) => {
-      // console.log(note, '----', note[Object.keys(note)[0]])
       if (note[Object.keys(note)[0]].category === item.category) {
         item.active = item.active + 1;
       }
@@ -118,5 +118,6 @@ export function updateTableWithData(notes, statistic) {
     addRowStatisticTable(item);
   });
 
-  updateDomNotes();
+  updateActiveNotes();
+  updateArchivedNotes();
 }

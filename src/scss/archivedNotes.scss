@@ -1,0 +1,15 @@
+.archive {
+  &__buttons {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__hide {
+    display: none;
+  }
+
+  &__table {
+    display: none;
+  }
+}

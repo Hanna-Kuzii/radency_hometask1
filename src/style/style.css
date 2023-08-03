@@ -75,6 +75,10 @@ button {
 .table__title {
   font-weight: 700;
 }
+.table__title, .table__title > .table__title_block {
+  background-color: #696969;
+  color: #ffffff;
+}
 .table__title :last-child {
   text-align: right;
 }
@@ -88,7 +92,7 @@ button {
   background-color: #ffffff;
 }
 
-.create-button {
+.button {
   padding: 10px 20px;
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -103,7 +107,7 @@ button {
   -webkit-transition: all 250ms;
   transition: all 250ms;
 }
-.create-button:hover, .create-button:focus {
+.button:hover, .button:focus {
   border-color: rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
           box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
@@ -180,7 +184,7 @@ button {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: #dcdcdc;
 }
 .new-note__container {
@@ -192,5 +196,29 @@ button {
   background-color: #605f5f;
 }
 .new-note .button-edit, .new-note .button-add {
+  display: none;
+}
+
+.statistic {
+  width: 60vw;
+  margin: 10px auto;
+}
+.statistic__title :last-child {
+  text-align: left;
+}
+
+.archive__buttons {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.archive__hide {
+  display: none;
+}
+.archive__table {
   display: none;
 }/*# sourceMappingURL=style.css.map */

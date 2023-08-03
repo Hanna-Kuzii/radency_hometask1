@@ -1,15 +1,13 @@
 import {
   addRowActiveTable,
   addRowStatisticTable,
-  updateDomNotes,
+  updateActiveNotes,
 } from "./src/js/notes.js";
 import "./src/js/newNote.js";
 import "./src/js/editNote.js";
 import "./src/js/deleteNotes.js";
 import "./src/js/archiveNote.js";
-import { deleteItemFromNotes } from "./src/js/deleteNotes.js";
-import { editNote, getFormFromItem } from "./src/js/editNote.js";
-import { archiveNote } from "./src/js/archiveNote.js";
+import "./src/js/archivedNotes.js"
 
 export const newNoteContainer = document.querySelector(".new-note");
 export const buttonSaveEditNote = document.querySelector(".button-edit");
@@ -22,11 +20,7 @@ window.addEventListener("load", function () {
     loading.style.display = "none";
     main.style.display = "block";
 
-    updateDomNotes();
-
-    statistic.forEach((item) => {
-      addRowStatisticTable(item);
-    });
+    updateActiveNotes();
   }, 3000);
 });
 
@@ -53,20 +47,6 @@ export let statistic = [
   },
 ];
 
-// statistic.forEach((item) => {
-//   notes.forEach((note) => {
-//     if (note.category === item.category) {
-//       item.active++;
-//     }
-//   });
-
-//   archiveNotes.forEach((note) => {
-//     if (note.category === item.category) {
-//       item.active++;
-//     }
-//   });
-// });
-
 fetch("./src/json/notes.json")
   .then((response) => response.json())
   .then((data) => {
@@ -79,13 +59,10 @@ fetch("./src/json/notes.json")
 setTimeout(() => {
   notes.forEach((item) => {
     addRowActiveTable(item);
-    console.log(item)
   });
 
   statistic.forEach((item) => {
-    // console.log(item)
     notes.forEach((note) => {
-      // console.log(note, '----', note[Object.keys(note)[0]])
       if (note[Object.keys(note)[0]].category === item.category) {
         item.active = item.active + 1;
       }

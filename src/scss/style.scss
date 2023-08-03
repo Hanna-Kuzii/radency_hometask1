@@ -15,6 +15,10 @@
 
 .table {
   &__title {
+    &, & > .table__title_block {
+      background-color: #696969;
+      color: #ffffff;
+    }
     font-weight: 700;
 
     :last-child {
@@ -36,7 +40,7 @@
   }
 }
 
-.create-button {
+.button {
   padding: 10px 20px;
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -57,4 +61,6 @@
 
 @import "./loading";
 @import "./active.scss";
-@import "./newNote.scss"
+@import "./newNote.scss";
+@import "./statistic.scss";
+@import "./archivedNotes.scss";

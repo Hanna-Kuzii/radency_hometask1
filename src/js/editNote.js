@@ -1,5 +1,4 @@
 import { buttonSaveEditNote, newNoteContainer, notes, statistic  } from "../../index.js";
-import { createNote } from "./newNote.js";
 import { updateTableWithData } from "./notes.js";
 
 export function getFormFromItem(itemId) {
@@ -47,8 +46,6 @@ export function editNote() {
   document.querySelector(".new-note__name").value = '';
   document.querySelector(".new-note__text").value = '';
 
-
-
   notes[index][itemId] = {
     ...notes[index][itemId],
     category,
@@ -56,9 +53,12 @@ export function editNote() {
     icon,
     name,
   };
+
+  document.querySelector(".new-note__name").value = '';
+  document.querySelector(".new-note__category").value = "choosed" ;
+  document.querySelector(".new-note__text").value = '';
   newNoteContainer.style.display = "none";
   buttonSaveEditNote.style.display = "none";
 
   updateTableWithData(notes, statistic);
-  // updateDomNotes();
 }

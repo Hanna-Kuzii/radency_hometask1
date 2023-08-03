@@ -1,0 +1,7 @@
+.statistic {
+  width: 60vw;
+  margin: 10px auto;
+}
+.statistic__title :last-child {
+  text-align: left;
+}/*# sourceMappingURL=statistic.css.map */

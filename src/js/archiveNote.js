@@ -5,7 +5,6 @@ export function archiveNote(itemId) {
   const index = notes.findIndex((obj) => Object.keys(obj)[0] === itemId);
   const item = notes.find((obj) => Object.keys(obj)[0] === itemId);
 
-  console.log(itemId, index);
   archiveNotes.push(item);
 
   if (index !== -1) {
@@ -13,6 +12,4 @@ export function archiveNote(itemId) {
   }
 
   updateTableWithData(notes, statistic);
-  // updateDomNotes();
-
 }
