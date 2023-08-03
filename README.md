@@ -1,5 +1,7 @@
 # radency_hometask1
 
+# [link to gh-page](https://hanna-kuzii.github.io/radency_hometask1)
+
 Clone the repository:
 Open a command line (terminal) on your computer and execute the command:
 ## git clone link_to_repository.git
