@@ -33,7 +33,11 @@ export function createNote(event) {
       break;
     default:
       console.log(`Mistake.`);
-  }
+  };
+
+  const dateRegex = /\d{1,2}\/\d{1,2}\/\d{4}/g;
+  const dates = content.match(dateRegex);
+  
   const id = Date.now();
   const date = new Date();
   const months = [
@@ -62,7 +66,7 @@ export function createNote(event) {
     created,
     category,
     content,
-    dates: "",
+    dates,
   };
 
   console.log(newNote);
