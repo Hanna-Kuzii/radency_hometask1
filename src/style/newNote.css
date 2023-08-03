@@ -1,0 +1,20 @@
+.new-note {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #dcdcdc;
+}
+.new-note__container {
+  width: 60vw;
+  margin: auto;
+}
+.new-note__button {
+  margin-top: 10px;
+  background-color: #605f5f;
+}
+.new-note .button-edit, .new-note .button-add {
+  display: none;
+}/*# sourceMappingURL=newNote.css.map */

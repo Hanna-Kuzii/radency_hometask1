@@ -1,0 +1,196 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+}
+
+.main {
+  position: relative;
+  display: none;
+  padding: 20px 10vw;
+}
+.main__button {
+  padding: 10px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.table__title {
+  font-weight: 700;
+}
+.table__title :last-child {
+  text-align: right;
+}
+.table__row {
+  background-color: #dcdcdc;
+}
+.table__row > .table__block {
+  background-color: #dcdcdc;
+}
+.table__row:hover > .table__block {
+  background-color: #ffffff;
+}
+
+.create-button {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+          box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
+}
+.create-button:hover, .create-button:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f5f5f5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: fadeOut 6ms forwards;
+          animation: fadeOut 6ms forwards;
+}
+.loading__element {
+  width: 50px;
+  height: 50px;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  margin: 5px;
+  -webkit-animation: slide 6s infinite;
+          animation: slide 6s infinite;
+}
+@-webkit-keyframes slide {
+  0%, 100% {
+    -webkit-transform: translateX(-950px);
+            transform: translateX(-950px);
+  }
+  50% {
+    -webkit-transform: translateX(950px);
+            transform: translateX(950px);
+  }
+}
+@keyframes slide {
+  0%, 100% {
+    -webkit-transform: translateX(-950px);
+            transform: translateX(-950px);
+  }
+  50% {
+    -webkit-transform: translateX(950px);
+            transform: translateX(950px);
+  }
+}
+@-webkit-keyframes slideIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes slideIn {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.new-note {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #dcdcdc;
+}
+.new-note__container {
+  width: 60vw;
+  margin: auto;
+}
+.new-note__button {
+  margin-top: 10px;
+  background-color: #605f5f;
+}
+.new-note .button-edit, .new-note .button-add {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

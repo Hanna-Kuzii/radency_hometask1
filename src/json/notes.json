@@ -1,0 +1,75 @@
+{
+  "active": [
+    {
+      "1": {
+        "icon": "https://img.icons8.com/material-outlined/24/shopping-cart--v1.png",
+        "name": "Shopping list",
+        "created": "April 20, 2021",
+        "category": "Task",
+        "content": "Potatos, watermelon",
+        "dates": ""
+      }
+    },
+    {
+      "2": {
+        "icon": "https://img.icons8.com/material-outlined/24/shopping-cart--v1.png",
+        "name": "Shopping list",
+        "created": "April 20, 2021",
+        "category": "Task",
+        "content": "Potatos, watermelon",
+        "dates": ""
+      }
+    },
+    {
+      "3": {
+        "icon": "https://img.icons8.com/material-outlined/24/shopping-cart--v1.png",
+        "name": "Shopping list",
+        "created": "April 20, 2021",
+        "category": "Task",
+        "content": "Potatos, watermelon",
+        "dates": ""
+      }
+    },
+    {
+      "4": {
+        "icon": "https://img.icons8.com/material-outlined/24/shopping-cart--v1.png",
+        "name": "Shopping list",
+        "created": "April 20, 2021",
+        "category": "Task",
+        "content": "Potatos, watermelon",
+        "dates": ""
+      }
+    },
+    {
+      "5": {
+        "icon": "https://img.icons8.com/material-outlined/24/thinking-bubble.png",
+        "name": "Shopping list",
+        "created": "April 20, 2021",
+        "category": "Random Thought",
+        "content": "Potatos, watermelon",
+        "dates": ""
+      }
+    },
+    {
+      "6": {
+        "icon": "https://img.icons8.com/material-outlined/24/shopping-cart--v1.png",
+        "name": "Shopping list",
+        "created": "April 20, 2021",
+        "category": "Task",
+        "content": "Potatos, watermelon",
+        "dates": ""
+      }
+    },
+    {
+      "7": {
+        "icon": "https://img.icons8.com/material-outlined/24/idea--v1.png",
+        "name": "Dooo",
+        "created": "April 20, 2021",
+        "category": "Idea",
+        "content": "Potatos, watermelon",
+        "dates": ""
+      }
+    }
+  ],
+  "archive": []
+}
