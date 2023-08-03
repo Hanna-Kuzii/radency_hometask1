@@ -1,5 +1,5 @@
-import { notes } from "../../index.js";
-import { addRowToTable, updateDomNotes, updateTableWithData } from "./notes.js";
+import { notes, statistic  } from "../../index.js";
+import { addRowActiveTable, updateDomNotes, updateTableWithData } from "./notes.js";
 
 const buttonNewNote = document.querySelector(".create-button");
 
@@ -74,7 +74,7 @@ export function createNote(event) {
   buttonAddNewNote.style.display = "none";
   // buttonSaveEditNote.style.display = "none";
   
-  updateTableWithData(notes);
+  updateTableWithData(notes, statistic);
   // updateDomNotes();
 }
 

@@ -1,11 +1,11 @@
-import { buttonSaveEditNote }  from "../../index.js";
+import { notes, archiveNotes, buttonSaveEditNote } from "../../index.js";
 import { archiveNote } from "./archiveNote.js";
 import { deleteItemFromNotes } from "./deleteNotes.js";
 import { editNote, getFormFromItem } from "./editNote.js";
 
-const tableBody = document.querySelector(".active__table");
+const tableBodyActive = document.querySelector(".active__body");
 
-export function addRowToTable(item) {
+export function addRowActiveTable(item) {
   const row = document.createElement("tr");
   row.classList.add("table__row", "active__row");
 
@@ -35,20 +35,7 @@ export function addRowToTable(item) {
       </td>
     `;
 
-  tableBody.appendChild(row);
-}
-
-export function updateTableWithData(notes) {
-  function clearTable() {
-    tableBody.innerHTML = "";
-  }
-  clearTable();
-
-  notes.forEach((item) => {
-    addRowToTable(item);
-  });
-
-  updateDomNotes();
+  tableBodyActive.appendChild(row);
 }
 
 export function updateDomNotes() {
@@ -76,4 +63,60 @@ export function updateDomNotes() {
       deleteItemFromNotes(itemId);
     });
   }
+}
+
+const tableBodyStatistic = document.querySelector(".statistic__body");
+
+export function addRowStatisticTable(item) {
+  const row = document.createElement("tr");
+  row.classList.add("table__row", "statistic__row");
+
+  row.innerHTML = `
+      <th scope="row">
+        <img src="${item.icon}" alt="task">
+      </th>
+      <td>${item.category}</td>
+      <td>${item.active}</td>
+      <td>${item.archived}</td>
+    `;
+
+  tableBodyStatistic.appendChild(row);
+}
+
+export function updateTableWithData(notes, statistic) {
+  function clearTable() {
+    tableBodyActive.innerHTML = "";
+    tableBodyStatistic.innerHTML ="";
+  }
+  clearTable();
+
+  notes.forEach((item) => {
+    addRowActiveTable(item);
+    console.log(item)
+  });
+
+  // statistic.forEach((item) => {});
+
+  statistic.forEach((item) => {
+    item.active = 0;
+    item.archived = 0;
+
+    // console.log(item)
+    notes.forEach((note) => {
+      // console.log(note, '----', note[Object.keys(note)[0]])
+      if (note[Object.keys(note)[0]].category === item.category) {
+        item.active = item.active + 1;
+      }
+    });
+
+    archiveNotes.forEach((note) => {
+      if (note[Object.keys(note)[0]].category === item.category) {
+        item.archived = item.archived + 1;
+      }
+    });
+
+    addRowStatisticTable(item);
+  });
+
+  updateDomNotes();
 }

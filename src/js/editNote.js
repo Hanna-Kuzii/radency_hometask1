@@ -1,9 +1,6 @@
-import { buttonSaveEditNote, newNoteContainer, notes } from "../../index.js";
+import { buttonSaveEditNote, newNoteContainer, notes, statistic  } from "../../index.js";
 import { createNote } from "./newNote.js";
 import { updateTableWithData } from "./notes.js";
-// const newNoteContainer = document.querySelector(".new-note");
-// const buttonSaveEditNote = document.querySelector(".button-edit");
-
 
 export function getFormFromItem(itemId) {
   const item = notes.find((obj) => Object.keys(obj)[0] === itemId);
@@ -62,6 +59,6 @@ export function editNote() {
   newNoteContainer.style.display = "none";
   buttonSaveEditNote.style.display = "none";
 
-  updateTableWithData(notes);
+  updateTableWithData(notes, statistic);
   // updateDomNotes();
 }

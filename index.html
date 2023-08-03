@@ -20,7 +20,7 @@
   </div>
   <div class="main">
     <div class="main__active active">
-      <table class="table">
+      <table class="table active__table">
         <thead>
           <tr class="table__title">
             <th scope="col"></th>
@@ -36,7 +36,7 @@
 
           </tr>
         </thead>
-        <tbody class="table__body active__table">
+        <tbody class="table__body active__body">
         </tbody>
       </table>
     </div>
@@ -46,11 +46,11 @@
       </button>
     </div>
     <div class="new-note">
-      <div class="new-note__container"> 
+      <div class="new-note__container">
         <form class="new-note__form">
           <div class="form-group">
             <label for="exampleFormControlInput1">Note's name</label>
-            <input type="text" class="form-control new-note__name"required placeholder="Name of your note">
+            <input type="text" class="form-control new-note__name" required placeholder="Name of your note">
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Choose category</label>
@@ -70,8 +70,8 @@
         </form>
       </div>
     </div>
-    <div class="main__archive archive">
-            <table class="table">
+    <div class="main__statistic statistic">
+      <table class="table statistic__table">
         <thead>
           <tr class="table__title">
             <th scope="col"></th>
@@ -80,12 +80,13 @@
             <th scope="col">Archived</th>
           </tr>
         </thead>
-        <tbody class="table__body">
+        <tbody class="table__body statistic__body">
+
         </tbody>
       </table>
     </div>
   </div>
-  <script  type="module" src="./index.js"></script>
+  <script type="module" src="./index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>

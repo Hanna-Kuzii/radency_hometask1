@@ -1,4 +1,4 @@
-import { notes, archiveNotes } from "../../index.js";
+import { notes, archiveNotes, statistic } from "../../index.js";
 import { updateTableWithData } from "./notes.js";
 
 export function archiveNote(itemId) {
@@ -12,7 +12,7 @@ export function archiveNote(itemId) {
     notes.splice(index, 1);
   }
 
-  updateTableWithData(notes);
+  updateTableWithData(notes, statistic);
   // updateDomNotes();
 
 }
