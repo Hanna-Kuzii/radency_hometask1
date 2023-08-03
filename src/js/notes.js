@@ -1,8 +1,14 @@
-const tableBody = document.querySelector(".table__body");
+import { buttonSaveEditNote }  from "../../index.js";
+import { archiveNote } from "./archiveNote.js";
+import { deleteItemFromNotes } from "./deleteNotes.js";
+import { editNote, getFormFromItem } from "./editNote.js";
+
+const tableBody = document.querySelector(".active__table");
 
 export function addRowToTable(item) {
   const row = document.createElement("tr");
-  row.classList.add("table__row");
+  row.classList.add("table__row", "active__row");
+
   row.id = Object.keys(item)[0];
 
   const itemData = item[Object.keys(item)[0]];
@@ -34,12 +40,40 @@ export function addRowToTable(item) {
 
 export function updateTableWithData(notes) {
   function clearTable() {
-    const tableBody = document.querySelector(".table__body");
     tableBody.innerHTML = "";
   }
-  clearTable(); 
+  clearTable();
 
   notes.forEach((item) => {
     addRowToTable(item);
   });
+
+  updateDomNotes();
+}
+
+export function updateDomNotes() {
+  const rows = document.querySelectorAll(".table__row");
+
+  for (const row of rows) {
+    let itemId = row.id;
+
+    const editButton = row.querySelector(".button_edit");
+    const archiveButton = row.querySelector(".button_archive");
+    const deleteButton = row.querySelector(".button_delete");
+
+    buttonSaveEditNote.addEventListener("click", editNote);
+
+    editButton.addEventListener("click", () => {
+      console.log("click");
+      getFormFromItem(itemId);
+    });
+
+    archiveButton.addEventListener("click", () => {
+      archiveNote(itemId);
+    });
+
+    deleteButton.addEventListener("click", () => {
+      deleteItemFromNotes(itemId);
+    });
+  }
 }

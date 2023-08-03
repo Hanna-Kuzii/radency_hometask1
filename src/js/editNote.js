@@ -1,49 +1,67 @@
-import { notes } from "../../index.js";
+import { buttonSaveEditNote, newNoteContainer, notes } from "../../index.js";
 import { createNote } from "./newNote.js";
-const newNoteContainer = document.querySelector(".new-note");
-const buttonSaveEditNote = document.querySelector(".button-edit");
+import { updateTableWithData } from "./notes.js";
+// const newNoteContainer = document.querySelector(".new-note");
+// const buttonSaveEditNote = document.querySelector(".button-edit");
 
 
-function deleteItemFromNotes(itemId) {
-  const index = notes.findIndex((obj) => Object.keys(obj)[0] === itemId);
-
-  if (index !== -1) {
-    notes.splice(index, 1);
-  }
-}
-
-function populateFormWithItem(itemId) {
+export function getFormFromItem(itemId) {
   const item = notes.find((obj) => Object.keys(obj)[0] === itemId);
-  deleteItemFromNotes(itemId);
 
   if (item) {
     const itemData = item[itemId];
+    const formInput = document.querySelector(".new-note__form");
     const nameInput = document.querySelector(".new-note__name");
     const categorySelect = document.querySelector(".new-note__category");
     const textArea = document.querySelector(".new-note__text");
 
+    formInput.id = itemId;
     nameInput.value = itemData.name;
     categorySelect.value = itemData.category;
     textArea.value = itemData.content;
   }
+
+  newNoteContainer.style.display = "flex";
+  buttonSaveEditNote.style.display = "block";
 }
 
-window.addEventListener("load", function () {
-  setTimeout(function () {
-    const rows = document.querySelectorAll(".table__row");
+export function editNote() {
+  const itemId = document.querySelector(".new-note__form").id;
+  const index = notes.findIndex((obj) => Object.keys(obj)[0] === itemId);
 
-    rows.forEach((row) => {
-      const editButton = row.querySelector(".button_edit");
+  const name = document.querySelector(".new-note__name").value;
+  const category = document.querySelector(".new-note__category").value;
+  const content = document.querySelector(".new-note__text").value;
+  let icon = "";
+  switch (category) {
+    case "Idea":
+      icon = "https://img.icons8.com/material-outlined/24/idea--v1.png";
+      break;
+    case "Task":
+      icon = "https://img.icons8.com/material-outlined/24/shopping-cart--v1.png";
+      break;
+    case "Random Thought":
+      icon = "https://img.icons8.com/material-outlined/24/thinking-bubble.png";
+      break;
+    default:
+      console.log(`Mistake.`);
+  }
 
-      editButton.addEventListener("click", () => {
-        newNoteContainer.style.display = "flex";
-        buttonSaveEditNote.style.display = "block";
+  document.querySelector(".new-note__name").value = '';
+  document.querySelector(".new-note__text").value = '';
 
-        const itemId = row.id;
-        populateFormWithItem(itemId);
-      });
-    });
-  }, 3000);
-});
 
-buttonSaveEditNote.addEventListener("click", createNote);
+
+  notes[index][itemId] = {
+    ...notes[index][itemId],
+    category,
+    content,
+    icon,
+    name,
+  };
+  newNoteContainer.style.display = "none";
+  buttonSaveEditNote.style.display = "none";
+
+  updateTableWithData(notes);
+  // updateDomNotes();
+}
