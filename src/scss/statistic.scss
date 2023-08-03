@@ -1,0 +1,14 @@
+.statistic {
+  width: 60vw;
+  margin: 10px auto;
+
+  &__table {
+
+  }
+
+  &__title {
+    :last-child  {
+      text-align: left;
+    }
+  }
+}

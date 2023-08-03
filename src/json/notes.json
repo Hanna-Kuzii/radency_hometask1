@@ -1,0 +1,75 @@
+{
+  "active": [
+    {
+      "1": {
+        "icon": "https://img.icons8.com/material-outlined/24/shopping-cart--v1.png",
+        "name": "Shopping list",
+        "created": "April 20, 2021",
+        "category": "Task",
+        "content": "Potatos, watermelon",
+        "dates": ""
+      }
+    },
+    {
+      "2": {
+        "icon": "https://img.icons8.com/material-outlined/24/shopping-cart--v1.png",
+        "name": "Sport",
+        "created": "December 23, 2023",
+        "category": "Task",
+        "content": "Gym every day",
+        "dates": ""
+      }
+    },
+    {
+      "3": {
+        "icon": "https://img.icons8.com/material-outlined/24/shopping-cart--v1.png",
+        "name": "New house",
+        "created": "May 10, 2020",
+        "category": "Task",
+        "content": "Buy new house",
+        "dates": ""
+      }
+    },
+    {
+      "4": {
+        "icon": "https://img.icons8.com/material-outlined/24/shopping-cart--v1.png",
+        "name": "Present",
+        "created": "September 5, 2023",
+        "category": "Task",
+        "content": "Present for mother",
+        "dates": ""
+      }
+    },
+    {
+      "5": {
+        "icon": "https://img.icons8.com/material-outlined/24/thinking-bubble.png",
+        "name": "Bissnes",
+        "created": "April 25, 2022",
+        "category": "Random Thought",
+        "content": "Mini green on Instagram",
+        "dates": ""
+      }
+    },
+    {
+      "6": {
+        "icon": "https://img.icons8.com/material-outlined/24/shopping-cart--v1.png",
+        "name": "Cleaning",
+        "created": "June 30, 2023",
+        "category": "Task",
+        "content": "Clean room",
+        "dates": ""
+      }
+    },
+    {
+      "7": {
+        "icon": "https://img.icons8.com/material-outlined/24/idea--v1.png",
+        "name": "Meditation",
+        "created": "April 26, 2022",
+        "category": "Idea",
+        "content": "Do everyday",
+        "dates": ""
+      }
+    }
+  ],
+  "archive": []
+}

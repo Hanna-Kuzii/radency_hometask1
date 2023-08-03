@@ -1,0 +1,15 @@
+.archive__buttons {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.archive__hide {
+  display: none;
+}
+.archive__table {
+  display: none;
+}/*# sourceMappingURL=archivedNotes.css.map */

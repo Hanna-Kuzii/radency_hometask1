@@ -1,0 +1,66 @@
+@import "./reset";
+
+.main {
+  position: relative;
+  display: none;
+  padding: 20px 10vw;
+
+  &__button {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.table {
+  &__title {
+    &, & > .table__title_block {
+      background-color: #696969;
+      color: #ffffff;
+    }
+    font-weight: 700;
+
+    :last-child {
+      text-align: right;
+    }
+  }
+
+  &__row {
+    background-color: #dcdcdc;
+    & > .table__block {
+      background-color: #dcdcdc;
+    }
+
+    &:hover {
+      & > .table__block {
+        background-color: #ffffff;
+      }
+    }
+  }
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 250ms;
+
+  &:hover,
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
+}
+
+@import "./loading";
+@import "./active.scss";
+@import "./newNote.scss";
+@import "./statistic.scss";
+@import "./archivedNotes.scss";
