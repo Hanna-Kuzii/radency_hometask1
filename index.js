@@ -53,7 +53,7 @@ fetch("./src/json/notes.json")
     notes = data.active;
   })
   .catch((error) => {
-    console.error("Помилка завантаження файлу:", error);
+    console.error("Problem (", error);
   });
 
 setTimeout(() => {

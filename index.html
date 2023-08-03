@@ -54,7 +54,7 @@
           </div>
           <div class="form-group">
             <label for="exampleFormControlSelect1">Choose category</label>
-            <select class="form-control new-note__category">
+            <select class="form-control new-note__category" required>
               <option value="choosed" selected disabled>-Category-</option>
               <option id="task" value="Task">Task</option>
               <option id="idea" value="Idea">Idea</option>
@@ -63,7 +63,7 @@
           </div>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Notes</label>
-            <textarea class="form-control new-note__text" rows="3"></textarea>
+            <textarea class="form-control new-note__text" rows="3" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary mb-2 new-note__button button-add">Create note</button>
           <button type="button" class="btn btn-primary mb-2 new-note__button button-edit">Edit note</button>

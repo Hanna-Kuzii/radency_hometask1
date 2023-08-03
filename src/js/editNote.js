@@ -1,4 +1,9 @@
-import { buttonSaveEditNote, newNoteContainer, notes, statistic  } from "../../index.js";
+import {
+  buttonSaveEditNote,
+  newNoteContainer,
+  notes,
+  statistic,
+} from "../../index.js";
 import { updateTableWithData } from "./notes.js";
 
 export function getFormFromItem(itemId) {
@@ -28,37 +33,44 @@ export function editNote() {
   const name = document.querySelector(".new-note__name").value;
   const category = document.querySelector(".new-note__category").value;
   const content = document.querySelector(".new-note__text").value;
-  let icon = "";
-  switch (category) {
-    case "Idea":
-      icon = "https://img.icons8.com/material-outlined/24/idea--v1.png";
-      break;
-    case "Task":
-      icon = "https://img.icons8.com/material-outlined/24/shopping-cart--v1.png";
-      break;
-    case "Random Thought":
-      icon = "https://img.icons8.com/material-outlined/24/thinking-bubble.png";
-      break;
-    default:
-      console.log(`Mistake.`);
+
+  if (name === "" || category === "" || content === "") {
+    window.alert("You should add text");
+  } else {
+    let icon = "";
+    switch (category) {
+      case "Idea":
+        icon = "https://img.icons8.com/material-outlined/24/idea--v1.png";
+        break;
+      case "Task":
+        icon =
+          "https://img.icons8.com/material-outlined/24/shopping-cart--v1.png";
+        break;
+      case "Random Thought":
+        icon =
+          "https://img.icons8.com/material-outlined/24/thinking-bubble.png";
+        break;
+      default:
+        console.log(`Mistake.`);
+    }
+
+    document.querySelector(".new-note__name").value = "";
+    document.querySelector(".new-note__text").value = "";
+
+    notes[index][itemId] = {
+      ...notes[index][itemId],
+      category,
+      content,
+      icon,
+      name,
+    };
+
+    document.querySelector(".new-note__name").value = "";
+    document.querySelector(".new-note__category").value = "choosed";
+    document.querySelector(".new-note__text").value = "";
+    newNoteContainer.style.display = "none";
+    buttonSaveEditNote.style.display = "none";
+
+    updateTableWithData(notes, statistic);
   }
-
-  document.querySelector(".new-note__name").value = '';
-  document.querySelector(".new-note__text").value = '';
-
-  notes[index][itemId] = {
-    ...notes[index][itemId],
-    category,
-    content,
-    icon,
-    name,
-  };
-
-  document.querySelector(".new-note__name").value = '';
-  document.querySelector(".new-note__category").value = "choosed" ;
-  document.querySelector(".new-note__text").value = '';
-  newNoteContainer.style.display = "none";
-  buttonSaveEditNote.style.display = "none";
-
-  updateTableWithData(notes, statistic);
 }
